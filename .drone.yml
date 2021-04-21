@@ -11,6 +11,12 @@ steps:
       echo starting
       sleep 15
       echo ending
+      
+  - name: additional step
+    image: busybox
+    commands:
+    - |
+      echo here is my edit made from a fork repo!
 ---
 kind: signature
 hmac: 3894b3564542567413eaf15bf8f338500e22cb31911c940bac5a355bbc758ac9
