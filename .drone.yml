@@ -1,0 +1,18 @@
+---
+kind: pipeline
+type: kubernetes
+name: build
+
+steps:
+  - name: Test
+    image: busybox
+    commands:
+    - |
+      echo starting
+      sleep 15
+      echo ending
+---
+kind: signature
+hmac: 3894b3564542567413eaf15bf8f338500e22cb31911c940bac5a355bbc758ac9
+
+...
