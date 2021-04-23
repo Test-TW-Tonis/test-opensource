@@ -19,6 +19,8 @@ steps:
       echo starting container 2
       sleep 25
       echo ending
+    depends_on:
+    - Test1
 
   - name: Test3
     image: busybox
@@ -29,9 +31,19 @@ steps:
       echo ending
     depends_on:
     - Test1
+    
+  - name: Test4
+    image: busybox
+    commands:
+    - |
+      echo starting
+      sleep 20
+      echo ending
+    depends_on:
     - Test2
+    - Test3
 ---
 kind: signature
-hmac: 76cb62f6ee1141a7aaf8b5cc090a2c5003889f9fa3e35a46e8b7e431756670fd
+hmac: a18b25c7960b3944f646905e2d1d5db25390b2cc8792e989432dc0badc017447
 
 ...
